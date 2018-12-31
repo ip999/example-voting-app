@@ -39,7 +39,7 @@ create-cluster-no-preempt:
 # delete the cluster
 delete-cluster:
     gcloud --project "$(PROJECT_ID)" container clusters delete "$(CLUSTER_NAME)" \
-        --zone=europe-west2-a
+        --zone="$(ZONE)"
 
 # apply the deployment file (declarative)
 apply-deployments:
