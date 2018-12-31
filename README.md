@@ -1,6 +1,14 @@
 Example Voting App
 =========
 
+TODO
+----
+
+Figure out the rest of the automation so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
+
+What is it?
+-----------
+
 A simple distributed application running across multiple Docker containers. Forked from  (https://github.com/dockersamples/example-voting-app) and modified to run in GKE.
 
 Getting started
