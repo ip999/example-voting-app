@@ -19,7 +19,7 @@ delete-cluster:
         --zone=europe-west2-a
 
 create-deployments:
-    kubectl create -f example-voting-app/gcr-kube.yaml
+    kubectl apply -f example-voting-app/gcr-kube.yaml
 
 delete-deployments:
     kubectl delete deployment,service db redis worker vote result redmon
