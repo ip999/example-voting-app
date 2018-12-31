@@ -15,7 +15,7 @@ CLUSTER_NAME=kube-test
 # Dynamic variables
 PROJECT_ID=$(shell gcloud config list project --format=flattened | awk 'FNR == 1 {print $$2}')
 
-# create a premtible 3 node cluster on the smallest modes possible
+# create a premtible 3 node cluster on the smallest nodes
 create-cluster:
     gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
         --zone="$(ZONE)" \
