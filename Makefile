@@ -21,5 +21,5 @@ delete-deployments:
     kubectl delete deployment,service db redis worker vote result redmon
 
 run-art:
-    docker run -v /home/ianp/csv-art.yaml:/home/node/artillery/csv-art.yaml \
-        -v art/out.csv:/home/node/artillery/out.csv gcr.io/kube-226720/artillery:latest run csv-art.yaml
+    docker run -v /home/ianp/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
+        -v /home/ianp/example-voting-app/art/out.csv:/home/node/artillery/out.csv gcr.io/kube-226720/artillery:latest run csv-art.yaml
