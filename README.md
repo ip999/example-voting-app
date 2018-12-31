@@ -8,7 +8,7 @@ TODO
 * or do different options "vote xxx cats / vote yyy dogs" etc?
 * Implement autoscaling options (understand node-pools)
 * Implement workflow for declarative configuration update
-* Integrate Istio
+* Integrate Istio (see (https://github.com/thesandlord/Istio101))
 
 
 What is it?
