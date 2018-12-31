@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ruby:alpine
 
 RUN apt-get update -qq
 
