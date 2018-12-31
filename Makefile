@@ -51,7 +51,7 @@ create-deployments:
 
 # delete the deployments created from the gcr-kube.yaml file
 delete-deployments:
-    kubectl delete deployment,service db redis worker vote result redmon
+    kubectl delete deployment,service db redis vote worker result
 
 # docker run command to run artillery locally to generate load
 run-art:
