@@ -14,7 +14,7 @@ TODO
 What is it?
 -----------
 
-A simple distributed application running across multiple Docker containers. Forked from  (https://github.com/dockersamples/example-voting-app) and modified to run in GKE. Handy Makefile implementation idea stolen from https://github.com/thesandlord/Istio101.
+A simple distributed application running across multiple Docker containers. Forked from the docker sample voting app (https://github.com/dockersamples/example-voting-app) and modified to run in GKE. Handy Makefile implementation idea stolen from https://github.com/thesandlord/Istio101.
 
 Getting started
 ---------------
