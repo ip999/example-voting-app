@@ -4,7 +4,12 @@ Example Voting App
 TODO
 ----
 
-Figure out the rest of the automation so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
+* Figure out the rest of the automation, so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
+* or do different options "vote xxx cats / vote yyy dogs" etc?
+* Implement autoscaling options (understand node-pools)
+* Implement workflow for declarative configuration update
+* Integrate Istio
+
 
 What is it?
 -----------
