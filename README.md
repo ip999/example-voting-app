@@ -8,13 +8,13 @@ TODO
 * or do different options "vote xxx cats / vote yyy dogs" etc?
 * Implement autoscaling options (understand node-pools)
 * Implement workflow for declarative configuration update
-* Integrate Istio (see (https://github.com/thesandlord/Istio101))
+* Integrate Istio (see https://github.com/thesandlord/Istio101)
 
 
 What is it?
 -----------
 
-A simple distributed application running across multiple Docker containers. Forked from  (https://github.com/dockersamples/example-voting-app) and modified to run in GKE.
+A simple distributed application running across multiple Docker containers. Forked from  (https://github.com/dockersamples/example-voting-app) and modified to run in GKE, handy Makefile implemtation idea stolen from https://github.com/thesandlord/Istio101.
 
 Getting started
 ---------------
