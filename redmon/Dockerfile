@@ -34,4 +34,4 @@ RUN apk add --no-cache --virtual .ruby-builddeps \
 RUN apk add --no-cache libstdc++
 
 EXPOSE 4567
-ENTRYPOINT ["redmon"]
+ENTRYPOINT ["redmon", "-r", "redis://redis:6379"]
