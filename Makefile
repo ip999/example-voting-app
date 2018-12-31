@@ -1,8 +1,12 @@
 .RECIPEPREFIX +=
 
+PROJECT_ID=$(shell gcloud config list project --format=flattened | awk 'FNR == 1 {print $$2}')
+ZONE=europe-west2-a
+CLUSTER_NAME=kube-test
+
 create-cluster:
-    gcloud --project=kube-226720 container clusters create kube-test \
-        --zone=europe-west2-a \
+    gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
+        --zone="$(ZONE)" \
         --machine-type=f1-micro \
         --num-nodes=3 \
         --disk-size=10 \
@@ -11,7 +15,7 @@ create-cluster:
         --preemptible
 
 delete-cluster:
-    gcloud --project=kube-226720 container clusters delete kube-test \
+    gcloud --project "$(PROJECT_ID)" container clusters delete "$(CLUSTER_NAME)" \
         --zone=europe-west2-a
 
 create-deployments:
