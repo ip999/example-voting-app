@@ -1,0 +1,17 @@
+config:
+    target: "http://35.246.5.161:5000/"
+    phases:
+      - duration: 60
+        arrivalRate: 1000
+    payload:
+        path: "out.csv"
+        fields:
+            - "vote"
+        order: sequence
+scenarios:
+  - flow:
+#    - log: "New virtual user running:- voting {{ vote }}"
+    - post:
+        url: "/"
+        form:
+            vote: "{{ vote }}"

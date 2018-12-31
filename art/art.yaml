@@ -1,0 +1,12 @@
+config:
+  target: "http://ad3f7b7b.ngrok.io"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+scenarios:
+  - flow:
+      - log: "New virtual user running"
+      - get:
+          url: "/x"
+      - get:
+          url: "/y"
