@@ -22,4 +22,4 @@ delete-deployments:
 
 run-art:
     docker run -v /home/ianp/csv-art.yaml:/home/node/artillery/csv-art.yaml \
-        -v /home/ianp/out.csv:/home/node/artillery/out.csv gcr.io/kube-226720/artillery:latest run csv-art.yaml
+        -v art/out.csv:/home/node/artillery/out.csv gcr.io/kube-226720/artillery:latest run csv-art.yaml
