@@ -34,7 +34,7 @@ create-cluster-no-preempt:
         --num-nodes=3 \
         --disk-size=10 \
         --no-enable-cloud-logging \
-        --enable-autorepair\
+        --enable-autorepair
 
 # delete the cluster
 delete-cluster:
