@@ -7,7 +7,6 @@
 # also need to figure out most elegant way to run
 # would be nice to see votes flip back and forth
 
-
 # Static configuration
 ZONE=europe-west2-a
 CLUSTER_NAME=kube-test
@@ -27,7 +26,7 @@ create-cluster:
         --preemptible
 
 # create a 3 node cluster on standard f1-micros
-create-cluster-no-preempt:
+create-cluster-nopreempt:
     gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
         --zone="$(ZONE)" \
         --machine-type=f1-micro \
