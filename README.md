@@ -34,7 +34,7 @@ The vote interface is then available on port 5000, the result one is available o
 Architecture
 -----
 
-![Architecture diagram](architecture.png)
+![Architecture diagram](architecture2.png)
 
 * A front-end web app in [Python](/vote) which lets you vote between two options
 * A [Redis](https://hub.docker.com/_/redis/) queue which collects new votes
