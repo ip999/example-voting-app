@@ -43,11 +43,11 @@ delete-cluster:
 
 # apply the deployment file (declarative)
 apply-deployments:
-    kubectl apply -f example-voting-app/gcr-kube.yaml
+    kubectl apply -f gcr-kube.yaml
 
 # create deployments from file (imperative)
 create-deployments:
-    kubectl create -f example-voting-app/gcr-kube.yaml
+    kubectl create -f gcr-kube.yaml
 
 # delete the deployments created from the gcr-kube.yaml file
 delete-deployments:
