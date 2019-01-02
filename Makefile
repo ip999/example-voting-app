@@ -23,7 +23,7 @@ create-cluster:
         --num-nodes=3 \
         --disk-size=10 \
         --no-enable-cloud-logging \
-        --enable-autorepair\
+        --enable-autorepair \
         --preemptible
 
 # create a 3 node cluster on standard f1-micros
