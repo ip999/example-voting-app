@@ -47,7 +47,7 @@ apply-deployments:
 
 # create deployments from file (imperative)
 create-deployments:
-    kubectl apply -f example-voting-app/gcr-kube.yaml
+    kubectl create -f example-voting-app/gcr-kube.yaml
 
 # delete the deployments created from the gcr-kube.yaml file
 delete-deployments:
