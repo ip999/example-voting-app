@@ -13,6 +13,7 @@ CLUSTER_NAME=kube-test
 
 # Dynamic variables
 PROJECT_ID=$(shell gcloud config list project --format=flattened | awk 'FNR == 1 {print $$2}')
+MY_PATH=$(shell pwd)
 
 # create a preemptible 3 node cluster on the smallest nodes
 create-cluster:
@@ -56,4 +57,11 @@ delete-deployments:
 run-art:
     docker run -v /home/ianp/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
         -v /home/ianp/example-voting-app/art/out.csv:/home/node/artillery/out.csv \
+        gcr.io/kube-226720/artillery:latest run csv-art.yaml
+
+# docker run command to run artillery locally to generate load
+# use dynamic local path
+run-art2:
+    docker run -v $(MY_PATH)/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
+        -v $(MY_PATH)/example-voting-app/art/out.csv:/home/node/artillery/out.csv \
         gcr.io/kube-226720/artillery:latest run csv-art.yaml
