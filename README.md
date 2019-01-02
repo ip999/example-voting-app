@@ -4,11 +4,11 @@ Example Voting App
 TODO
 ----
 
-* Figure out the rest of the automation, so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
 * or do different options "vote xxx cats / vote yyy dogs" etc?
 * Implement autoscaling options (understand node-pools)
 * Implement workflow for declarative configuration update
 * Integrate Istio (see https://github.com/thesandlord/Istio101)
+* Figure out the rest of the automation, so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
 
 
 What is it?
@@ -19,32 +19,17 @@ A simple distributed application running across multiple Docker containers. Fork
 Getting started
 ---------------
 
-Run the app in Kubernetes
--------------------------
+look in the Makefile for the various recipies to build a cluster and deploy the application containers. 
 
-The folder k8s-specifications contains the yaml specifications of the Voting App's services.
+Basic getting started:
 
-First create the vote namespace
+`make create-cluster` to create the kubernetes cluster on GKE (takes a couple of minutes)
 
-```
-$ kubectl create namespace vote
-```
+`make create-deployments` to deploy the vote application
 
-Run the following command to create the deployments and services objects:
-```
-$ kubectl create -f k8s-specifications/
-deployment "db" created
-service "db" created
-deployment "redis" created
-service "redis" created
-deployment "result" created
-service "result" created
-deployment "vote" created
-service "vote" created
-deployment "worker" created
-```
+`make run-art` to generate some artificial load ## not completed the automation yet, currently the appropate URL adding manually
 
-The vote interface is then available on port 31000 on each host of the cluster, the result one is available on port 31001.
+The vote interface is then available on port 5000, the result one is available on port 5001.
 
 Architecture
 -----
