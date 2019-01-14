@@ -39,9 +39,12 @@ Basic getting started:
 
 `make create-deployments` to deploy the vote application
 
+`kubectl get services` to get the EXTERNAL-IP for "vote" and "result"
+
+The vote interface is available on port 5000, the result one is available on port 5001.
+
 `make run-art` to generate some artificial load ** not completed the automation yet, currently the appropate URL needs adding manually
 
-The vote interface is then available on port 5000, the result one is available on port 5001.
 
 
 Note
