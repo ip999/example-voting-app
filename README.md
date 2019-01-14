@@ -29,6 +29,8 @@ Architecture
 Getting started
 ---------------
 
+for an easy life - start a project on GCP, run the Cloud Shell and clone this repo.
+
 look in the Makefile for the various recipies to build a cluster and deploy the application containers. 
 
 Basic getting started:
@@ -37,7 +39,7 @@ Basic getting started:
 
 `make create-deployments` to deploy the vote application
 
-`make run-art` to generate some artificial load ## not completed the automation yet, currently the appropate URL adding manually
+`make run-art` to generate some artificial load ** not completed the automation yet, currently the appropate URL needs adding manually
 
 The vote interface is then available on port 5000, the result one is available on port 5001.
 
