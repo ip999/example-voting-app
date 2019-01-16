@@ -29,11 +29,15 @@ Architecture
 Getting started
 ---------------
 
-for an easy life - start a project on GCP, run the Cloud Shell and clone this repo.
+For an easy life - start a project on GCP, run the Cloud Shell and clone this repo.
 
 look in the Makefile for the various recipies to build a cluster and deploy the application containers. 
 
 Basic getting started:
+
+(check if needed) Enable compute API..
+
+`gcloud services enable compute.googleapis.com' can take a couple of minutes
 
 `make create-cluster` to create the kubernetes cluster on GKE (takes a couple of minutes)
 
