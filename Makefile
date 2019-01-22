@@ -65,3 +65,9 @@ run-art2:
     docker run -v $(MY_PATH)/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
         -v $(MY_PATH)/example-voting-app/art/out.csv:/home/node/artillery/out.csv \
         gcr.io/kube-226720/artillery:latest run csv-art.yaml
+
+get-vote-ip:
+    bash -c 'external_ip=""; while [ -z $external_ip ]; do echo "Waiting for end point..."; external_ip=$(kubectl get svc vote --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"); [ -z "$external_ip" ] && sleep 10; done; echo "End point ready-" && echo $external_ip; export endpoint=$external_ip'
+
+get-result-ip:
+    bash -c 'external_ip=""; while [ -z $external_ip ]; do echo "Waiting for end point..."; external_ip=$(kubectl get svc result --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"); [ -z "$external_ip" ] && sleep 10; done; echo "End point ready-" && echo $external_ip; export endpoint=$external_ip'
