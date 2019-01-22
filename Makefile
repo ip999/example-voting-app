@@ -67,7 +67,8 @@ run-art2:
         gcr.io/kube-226720/artillery:latest run csv-art.yaml
 
 get-vote-ip:
-    kubectl get svc vote --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}";echo
+    kubectl get svc vote --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"; echo ":\c"
+    kubectl get svc vote -o jsonpath='{.spec.ports[0].port}'; echo
 
 get-result-ip:
     kubectl get svc result --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}";echo
