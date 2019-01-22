@@ -70,7 +70,7 @@ get-vote-ip:
     @kubectl get svc vote --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"; echo ":\c"
     @kubectl get svc vote -o jsonpath='{.spec.ports[0].port}'; echo
 
-get-vote-ip:
+get-result-ip:
     @kubectl get svc result --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"; echo ":\c"
     @kubectl get svc result -o jsonpath='{.spec.ports[0].port}'; echo
 
