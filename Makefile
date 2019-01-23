@@ -35,6 +35,17 @@ create-cluster-nopreempt:
         --no-enable-cloud-monitoring \
         --enable-autorepair
 
+# create a single node cluster on f1-micro
+create-cluster-single:
+    gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
+        --zone="$(ZONE)" \
+        --machine-type=f1-micro \
+        --num-nodes=1 \
+        --disk-size=10 \
+        --no-enable-cloud-logging \
+        --no-enable-cloud-monitoring \
+        --enable-autorepair \
+
 # delete the cluster
 delete-cluster:
     gcloud --project "$(PROJECT_ID)" container clusters delete "$(CLUSTER_NAME)" \
