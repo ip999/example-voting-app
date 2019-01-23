@@ -35,19 +35,21 @@ look in the Makefile for the various recipies to build a cluster and deploy the 
 
 Basic getting started:
 
-(check if needed) Enable compute API..
+Clone this repo `git clone https://github.com/ip999/example-voting-app.git`
 
-`gcloud services enable compute.googleapis.com' can take a couple of minutes
+From within the repo directory `cd example-voting-app`:
+
+`make enable-apis` to Enable the (compute API) can take a couple of minutes (other APIs may be needed?)
 
 `make create-cluster` to create the kubernetes cluster on GKE (takes a couple of minutes)
 
 `make create-deployments` to deploy the vote application
 
-`kubectl get services` to get the EXTERNAL-IP for "vote" and "result"
+`make get-vote-ip` to get the EXTERNAL-IP for "vote" and `make get-result-ip` for "result"
 
-The vote interface is available on port 5000, the result one is available on port 5001.
+This will also include the port numbers. By default the vote interface is available on port 5000, result is available on port 5001.
 
-`make run-art` to generate some artificial load ** not completed the automation yet, currently the appropate URL needs adding manually
+TODO: `make run-art` to generate some artificial load ** not completed the automation yet, currently the appropate URL needs adding manually
 
 
 
