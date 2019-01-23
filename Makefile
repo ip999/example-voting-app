@@ -20,6 +20,7 @@ create-cluster:
         --num-nodes=3 \
         --disk-size=10 \
         --no-enable-cloud-logging \
+        --no-enable-cloud-monitoring \
         --enable-autorepair \
         --preemptible
 
@@ -31,6 +32,7 @@ create-cluster-nopreempt:
         --num-nodes=3 \
         --disk-size=10 \
         --no-enable-cloud-logging \
+        --no-enable-cloud-monitoring \
         --enable-autorepair
 
 # delete the cluster
