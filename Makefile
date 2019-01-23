@@ -2,10 +2,7 @@
 # Fixes the whole "make only likes tabs" thing
 #
 # Makefile for convenience
-# 
-# would be nice to be able to pull exposed services into environment variables
-# also need to figure out most elegant way to run
-# would be nice to see votes flip back and forth
+
 
 # Static configuration
 ZONE=europe-west2-a
