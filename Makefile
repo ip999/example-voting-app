@@ -16,6 +16,7 @@ MY_PATH=$(shell pwd)
 #enable APIs needed for this example
 enable-apis:
     gcloud --project "$(PROJECT_ID)" services enable compute.googleapis.com
+    gcloud --project "$(PROJECT_ID)" services enable container.googleapis.com 
 
 # create a preemptible 3 node cluster on the smallest nodes
 create-cluster:
