@@ -39,7 +39,7 @@ Clone this repo `git clone https://github.com/ip999/example-voting-app.git`
 
 From within the repo directory `cd example-voting-app`:
 
-`make enable-apis` to Enable the (compute API) can take a couple of minutes (other APIs may be needed?)
+`make enable-apis` to Enable the (compute & container APIs) can take a couple of minutes
 
 `make create-cluster` to create the kubernetes cluster on GKE (takes a couple of minutes)
 
