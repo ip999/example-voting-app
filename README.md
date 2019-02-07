@@ -45,7 +45,7 @@ From within the repo directory `cd example-voting-app`:
 
 `make get-vote-ip` to get the EXTERNAL-IP for "vote" and `make get-result-ip` for "result"
 
-'make art-run' to batter the app with random votes.
+'make run-artillery' to hit the app with random votes.
 
 This will also include the port numbers. By default the vote interface is available on port 5000, result is available on port 5001.
 
