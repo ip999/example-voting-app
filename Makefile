@@ -70,20 +70,10 @@ delete-deployments:
     kubectl delete deployment,service db redis vote worker result
 
 # docker run command to run artillery locally to generate load
-run-art:
-    docker run -v /home/ianp/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
-        -v /home/ianp/example-voting-app/art/out.csv:/home/node/artillery/out.csv \
-        gcr.io/kube-226720/artillery:latest run csv-art.yaml
 run-artillery:
     docker build $(HOME)/example-voting-app/art/ --tag=artillery:latest
     docker run -v $(HOME)/example-voting-app/art:/artillery --env \
     TARGET='http://$(shell make get-vote-ip)' artillery run /artillery/art.yaml
-# docker run command to run artillery locally to generate load
-# use dynamic local path
-run-art2:
-    docker run -v $(MY_PATH)/example-voting-app/art/csv-art.yaml:/home/node/artillery/csv-art.yaml \
-        -v $(MY_PATH)/example-voting-app/art/out.csv:/home/node/artillery/out.csv \
-        gcr.io/kube-226720/artillery:latest run csv-art.yaml
 
 get-vote-ip:
     @kubectl get svc vote --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"; echo ":\c"
@@ -93,5 +83,5 @@ get-result-ip:
     @kubectl get svc result --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"; echo ":\c"
     @kubectl get svc result -o jsonpath='{.spec.ports[0].port}'; echo
 
-fixme:
+test-fixme:
     bash -c 'external_ip=""; while [ -z $external_ip ]; do echo "Waiting for end point..."; external_ip=$(kubectl get svc result --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}"); [ -z "$external_ip" ] && sleep 10; done; echo "End point ready-" && echo $external_ip; export endpoint=$external_ip'
