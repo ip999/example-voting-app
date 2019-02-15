@@ -7,8 +7,6 @@ TODO
 * Implement autoscaling options (understand node-pools)
 * Implement workflow for declarative configuration update
 * Integrate Istio (see https://github.com/thesandlord/Istio101)
-* Figure out the rest of the automation, so the artillery.io container can either run in kubernetes or be run from different environments without needing modification (passing of URL for vote app, and re-build container).
-* or do different options "vote xxx cats / vote yyy dogs" etc?
 
 What is it?
 -----------
@@ -47,9 +45,10 @@ From within the repo directory `cd example-voting-app`:
 
 `make get-vote-ip` to get the EXTERNAL-IP for "vote" and `make get-result-ip` for "result"
 
+'make run-artillery' to hit the app with random votes.
+
 This will also include the port numbers. By default the vote interface is available on port 5000, result is available on port 5001.
 
-TODO: `make run-art` to generate some artificial load ** not completed the automation yet, currently the appropate URL needs adding manually
 
 
 

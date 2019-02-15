@@ -1,12 +1,16 @@
 config:
-  target: "http://ad3f7b7b.ngrok.io"
+  target: "{{ $processEnvironment.TARGET }}"
   phases:
     - duration: 10
       arrivalRate: 1
+  variables:
+    voteChoice:
+      - "a"
+      - "b"
 scenarios:
-  - flow:
-      - log: "New virtual user running"
-      - get:
-          url: "/x"
-      - get:
-          url: "/y"
+    - flow:
+      - log: "New virtual user for voting for {{ voteChoice }} {{ $processEnvironment.TARGET }}"
+      - post:
+          url: "/"
+          form:
+            vote: "{{ voteChoice }}"
