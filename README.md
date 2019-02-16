@@ -8,7 +8,7 @@ TODO
 * use namespaces?
 * run artillery as a job (or even a cronjob?)
 * can we have the ExternalIP Loadbalancer & a clusterIP at the same time to allow internal access? DOES IT MATTER?
-* change result view to show number of votes for a/b
+* change result view to show 3? decimal places and/or number of votes for a/b
 * Implement workflow for declarative configuration update
 * Integrate Istio (see https://github.com/thesandlord/Istio101)
 
