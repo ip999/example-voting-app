@@ -1,0 +1,16 @@
+config:
+  target: "http://vote:5000"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+  variables:
+    voteChoice:
+      - "a"
+      - "b"
+scenarios:
+    - flow:
+      - log: "New virtual user for voting for {{ voteChoice }} http://vote:5000"
+      - post:
+          url: "/"
+          form:
+            vote: "{{ voteChoice }}"
