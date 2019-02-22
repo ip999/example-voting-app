@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: artillery
+spec:
+  template:
+    metadata:
+      name: artillery
+    spec:
+      containers:
+      - name: art
+        image: gcr.io/kube-226720/artillery:latest
+        command:
+         - "artillery"
+         - "run"
+         - "/artillery/vote.yaml"
+      restartPolicy: Never
