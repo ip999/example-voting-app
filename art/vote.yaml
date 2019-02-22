@@ -2,7 +2,7 @@ config:
   target: "http://vote:5000"
   phases:
     - duration: 10
-      arrivalRate: 1
+      arrivalRate: 1000
   variables:
     voteChoice:
       - "a"
