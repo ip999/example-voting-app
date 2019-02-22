@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: artillery
 spec:
+  successfulJobsHistoryLimit: 0
   template:
     metadata:
       name: artillery
