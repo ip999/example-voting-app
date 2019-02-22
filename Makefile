@@ -30,6 +30,18 @@ create-cluster:
         --enable-autorepair \
         --preemptible
 
+# create a cluster on n1-standard-2 nodes
+create-cluster-n1:
+    gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
+            --zone="$(ZONE)" \
+            --machine-type=n1-standard-2 \
+            --num-nodes=3 \
+            --disk-size=10 \
+            --no-enable-cloud-logging \
+            --no-enable-cloud-monitoring \
+            --enable-autorepair \
+            --preemptible
+
 # create a 3 node cluster on standard f1-micros
 create-cluster-nopreempt:
     gcloud --project "$(PROJECT_ID)" container clusters create "$(CLUSTER_NAME)" \
