@@ -10,7 +10,6 @@ spec:
       containers:
       - name: art
         image: gcr.io/kube-226720/artillery:latest
-        command:
-         - "run"
-         - "/artillery/vote.yaml"
+        command: ["/artillery/artillery"]
+        args: ["run /artillery/vote.yaml"]
       restartPolicy: Never
